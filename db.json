@@ -1,0 +1,53 @@
+{
+    "coffees": [
+      {
+        "id": 1,
+        "name": "Espresso",
+        "image": "https://example.com/images/espresso.jpg",
+        "price": 2.50
+      },
+      {
+        "id": 2,
+        "name": "Latte",
+        "image": "https://example.com/images/latte.jpg",
+        "price": 3.50
+      },
+      {
+        "id": 3,
+        "name": "Cappuccino",
+        "image": "https://example.com/images/cappuccino.jpg",
+        "price": 3.00
+      },
+      {
+        "id": 4,
+        "name": "Americano",
+        "image": "https://example.com/images/americano.jpg",
+        "price": 2.00
+      },
+      {
+        "id": 5,
+        "name": "Mocha",
+        "image": "https://example.com/images/mocha.jpg",
+        "price": 4.00
+      },
+      {
+        "id": 6,
+        "name": "Flat White",
+        "image": "https://example.com/images/flat_white.jpg",
+        "price": 3.75
+      },
+      {
+        "id": 7,
+        "name": "Affogato",
+        "image": "https://example.com/images/affogato.jpg",
+        "price": 4.50
+      },
+      {
+        "id": 8,
+        "name": "Cold Brew",
+        "image": "https://example.com/images/cold_brew.jpg",
+        "price": 3.00
+      }
+    ]
+  }
+  
