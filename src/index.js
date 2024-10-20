@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img.alt = coffee.name;
             img.width = 50;
             img.height = 50;
+            img.classList.add('coffee-img');
             imgCell.appendChild(img);
 
             const nameCell = document.createElement('td');

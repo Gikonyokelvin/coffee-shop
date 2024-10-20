@@ -8,3 +8,10 @@
     right: 20px; 
     width: 250px; 
 }
+
+.coffee-img {
+    transition: 0.2s;
+}
+.coffee-img:hover {
+    transform: scale(1.2);
+}
