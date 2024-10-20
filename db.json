@@ -3,50 +3,38 @@
       {
         "id": 1,
         "name": "Espresso",
-        "image":"https://tinyurl.com/59c52d55",
+        "image":"assets/images/espresso.jpg",
         "price": 2.50
       },
       {
         "id": 2,
         "name": "Latte",
-        "image": "https://example.com/images/latte.jpg",
+        "image": "assets/images/latte.jpg",
         "price": 3.50
       },
       {
         "id": 3,
         "name": "Cappuccino",
-        "image": "https://example.com/images/cappuccino.jpg",
+        "image": "assets/images/cappuccino.jpeg",
         "price": 3.00
       },
       {
         "id": 4,
         "name": "Americano",
-        "image": "https://example.com/images/americano.jpg",
+        "image": "assets/images/americano.jpeg",
         "price": 2.00
       },
       {
         "id": 5,
         "name": "Mocha",
-        "image": "https://example.com/images/mocha.jpg",
+        "image": "assets/images/mocha.png",
         "price": 4.00
       },
       {
         "id": 6,
         "name": "Flat White",
-        "image": "https://example.com/images/flat_white.jpg",
+        "image": "assets/images/flat-white.jpg",
         "price": 3.75
-      },
-      {
-        "id": 7,
-        "name": "Affogato",
-        "image": "https://example.com/images/affogato.jpg",
-        "price": 4.50
-      },
-      {
-        "id": 8,
-        "name": "Cold Brew",
-        "image": "https://example.com/images/cold_brew.jpg",
-        "price": 3.00
       }
     ]
   }
