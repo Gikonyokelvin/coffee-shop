@@ -8,37 +8,39 @@
     <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-    <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="/assets/images/logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-            The Coffee Bar
-          </a>
+    <nav class="navbar">
+      <a>
+          <img src="/assets/images/logo.png" alt="Logo" width="30" height="24">
+          <p>The Coffee Bar</p>
+      </a>
+    </nav>
+    <h1>Coffee Menu</h1>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col" id='image'></th>
+                    <th scope="col" id='name'>Coffee</th>
+                    <th scope="col" id='price'>Price</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+        <div class="checkout">
+            <h2>Checkout</h2>
+            <p>Order Summary</p>
+            <ul id="order-summary"></ul>
+            <h3>Total: $<span id="total">0.00</span></h3>
+            <div class="orderedby">
+                <input type="text" id="customer-name" placeholder="Name" required>
+                <input type="tel" id="phone-number" placeholder="Phone Number" required>
+                <button id="order">Order</button>
+                <!-- Flash message area -->
+                <div id="flash-message" class="flash-message" style="display: none;"></div>
+            </div>
         </div>
-      </nav>
-      <h1>Coffee Menu</h1>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col" id = 'image'>Image</th>
-            <th scope="col" id = 'name'>Coffee</th>
-            <th scope="col" id = 'price'>price</th>
-          
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-      <div class="checkout">
-        <h2>Checkout</h2>
-        <p>Order Summary</p>
-        <ul id="order-summary"></ul>
-        <h3>Total: $<span id="total">0.00</span></h3>
-      <div class="orderedby">
-        <input type="text" id="customer-name" placeholder="Name" required>
-        <input type="tel" id="phone-number" placeholder="Phone Number" required>
-        <button id="order">Order</button>
-      </div>
-      </div>
-      <script src="src/index.js"></script>
+    <script src="src/index.js"></script>
 </body>
+
 </html>

@@ -35,6 +35,12 @@
         "name": "Flat White",
         "image": "assets/images/flat-white.jpg",
         "price": 3.75
+      },
+      {
+        "id": 7,
+        "name": "affogato",
+        "image": "assets/images/background.jpeg",
+        "price": 3.50
       }
     ]
   }

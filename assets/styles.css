@@ -1,17 +1,208 @@
-.table {
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('/assets/images/background.jpeg');
+    background-position: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 10px;
+}
+
+.navbar{
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+.navbar p {
+    font-size: x-large;
+    color: white;
+    margin: 0;
+}
+.navbar a {
+    display: flex;
+    align-items: center;
+}
+.navbar img {
+    margin-right: 10px;
+}
+
+/* Coffee Menu Header */
+h1 {
+    font-size: 2.5rem;
+    margin: 10px;
+    color: white;
+    border-bottom: 1px solid white;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+/* Coffee Menu Table */
+table {
     width: 50%;
+    background-color: rgba(73, 34, 1, 0.8);
 }
 
-.checkout {
-    position: absolute;
-    top: 20px;
-    right: 20px; 
-    width: 250px; 
+thead{
+    color:white;
+    border-bottom:1px solid white;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+tbody {
+    border-bottom:1px solid white;
+    margin: 10px;
+    color: white;
+    text-decoration: dotted;
 }
 
+table img {
+    border-radius: 8px;
+}
+
+/* Coffee Image Hover Effect */
 .coffee-img {
-    transition: 0.2s;
+    transition: transform 0.2s ease;
 }
+
 .coffee-img:hover {
     transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* Checkout Section */
+.checkout {
+    position: absolute;
+    top: 130px;
+    right: 30px;
+    width: 300px;
+    overflow: hidden;
+    background-color: rgba(73, 34, 1, 0.8); /* 80% opaque */
+
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.checkout h2 {
+    font-size: 1.8rem;
+    margin: 10px;
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+}
+
+.checkout p {
+    font-size: 1.1rem;
+    margin: 10px;
+    color: white;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.checkout ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: white;
+    overflow-y: auto;
+    max-height: 160px;
+}
+/* Webkit Scrollbar Styling (Chrome, Safari, Edge) */
+.checkout ul::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+.checkout ul::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* Track background */
+    border-radius: 5px; /* Rounded track corners */
+}
+
+.checkout ul::-webkit-scrollbar-thumb {
+    background-color: #f4a261; /* Scrollbar thumb color */
+    border-radius: 5px; /* Rounded scrollbar thumb */
+    border: 2px solid rgba(73, 34, 1, 0.8); /* Add a border around the thumb */
+}
+
+.checkout ul::-webkit-scrollbar-thumb:hover {
+    background-color: #e76f51; /* Darker color on hover */
+}
+
+.checkout li {
+    display: flex;
+    justify-content: space-between;
+    padding: 1px 0;
+}
+
+.checkout h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    color: white;
+    font-style: italic;
+}
+
+/* Ordered By Section */
+.orderedby {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.orderedby input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #492201;
+    font-size: 1rem;
+}
+
+.orderedby input:focus {
+    outline: none;
+    border-color: #492201;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+#order {
+    color: #492201;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#order:hover {
+    background-color: #492201;
+    color: white;
+    border: 1px solid white;
+}
+
+/* Minus Button Styling */
+button.btn-warning {
+    background-color:white;
+    color: #492201;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button.btn-warning:hover {
+    background-color: #492201;
+    color: white;
+    border: 1px solid white;
+}
+
+.flash-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(40, 167, 69, 0.8); /* Greenish background */
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1; /* Start fully visible */
 }
