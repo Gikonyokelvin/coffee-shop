@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 row.appendChild(nameCell);
                 row.appendChild(priceCell);
     
-                // Add event listener to the row
                 row.addEventListener('click', () => {
                     if (orderItems[coffee.name]) {
                         orderItems[coffee.name].quantity += 1;
@@ -58,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     const listItem = document.createElement('li');
                     listItem.textContent = `${coffeeName} - $${item.price.toFixed(2)} x ${item.quantity}`;
 
-                    // Add minus (delete) button
                     const minusButton = document.createElement('button');
                     minusButton.textContent = '-';
                     minusButton.classList.add('btn', 'btn-warning', 'btn-sm', 'ms-2');
@@ -76,44 +74,90 @@ document.addEventListener('DOMContentLoaded', () => {
 
             function removeItem(coffeeName) {
                 if (orderItems[coffeeName].quantity > 1) {
-                    orderItems[coffeeName].quantity -= 1; // Decrease quantity
+                    orderItems[coffeeName].quantity -= 1;
                 } else {
-                    delete orderItems[coffeeName]; // Remove item if quantity is 0
+                    delete orderItems[coffeeName];
                 }
-                updateOrderSummary(); // Recalculate and update the summary
+                updateOrderSummary();
+            }
+
+            // Comments Handling
+            const commentList = document.getElementById('comment-list');
+            const storedComments = JSON.parse(localStorage.getItem('comments')) || data.comments;
+
+            // Load comments from localStorage or fallback to db.json
+            storedComments.forEach(comment => {
+                addCommentToDOM(comment);
+            });
+
+            // Add new comments
+            const commentForm = document.getElementById('comment-form');
+            commentForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const commentText = document.getElementById('comment-text').value;
+                if (commentText) {
+                    const newComment = { id: Date.now(), text: commentText };
+
+                    // Store comment in localStorage
+                    storedComments.push(newComment);
+                    localStorage.setItem('comments', JSON.stringify(storedComments));
+
+                    addCommentToDOM(newComment);
+                    document.getElementById('comment-text').value = ''; // Clear input
+                }
+            });
+
+            // Function to add a comment to the DOM
+            function addCommentToDOM(comment) {
+                const listItem = document.createElement('li');
+                listItem.textContent = comment.text;
+
+                // Add delete button to each comment
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.addEventListener('click', () => {
+                    deleteComment(comment.id, listItem);
+                });
+
+                listItem.appendChild(deleteButton);
+                commentList.appendChild(listItem);
+            }
+
+            // Delete comments from localStorage and DOM
+            function deleteComment(commentId, listItem) {
+                const commentIndex = storedComments.findIndex(comment => comment.id === commentId);
+                if (commentIndex !== -1) {
+                    storedComments.splice(commentIndex, 1); // Remove comment from array
+                    localStorage.setItem('comments', JSON.stringify(storedComments)); // Update localStorage
+                    listItem.remove(); // Remove from DOM
+                }
             }
         })
-        .catch(error => console.error('Error fetching coffee menu:', error));
+        .catch(error => console.error('Error fetching coffee menu and comments:', error));
+
     // Handle order button click
     const orderButton = document.getElementById('order');
     orderButton.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevent form submission
+        event.preventDefault();
         
-        // Get customer name and phone number
         const customerName = document.getElementById('customer-name').value;
         const phoneNumber = document.getElementById('phone-number').value;
         
         if (customerName && phoneNumber) {
-            // Show flash message
             const flashMessage = document.getElementById('flash-message');
             flashMessage.textContent = `Thank you, ${customerName}! Your order will be ready in 15 minutes.`;
             flashMessage.style.display = 'block';
 
-            // Clear input fields
             document.getElementById('customer-name').value = '';
             document.getElementById('phone-number').value = '';
-
-            // Clear the order summary
             document.getElementById('order-summary').innerHTML = '';
-
-            // Clear the total
             document.getElementById('total').textContent = '0.00';
 
-            // Hide the flash message after 3 seconds
             setTimeout(() => {
-                flashMessage.style.opacity = 0; // Fade out
-                setTimeout(() => flashMessage.style.display = 'none', 500); // Hide after fade out
-            }, 5000); // 3000ms = 3 seconds
+                flashMessage.style.opacity = 0;
+                setTimeout(() => flashMessage.style.display = 'none', 500);
+            }, 5000);
         }
     });
 });

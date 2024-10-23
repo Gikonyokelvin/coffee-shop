@@ -36,9 +36,17 @@
                 <input type="text" id="customer-name" placeholder="Name" required>
                 <input type="tel" id="phone-number" placeholder="Phone Number" required>
                 <button id="order">Order</button>
-                <!-- Flash message area -->
+                <!-- Flash message -->
                 <div id="flash-message" class="flash-message" style="display: none;"></div>
             </div>
+        </div>
+        <!-- Add review section in your HTML -->
+        <div class="form">
+            <form  id="comment-form">
+            <input type="text" id="comment-text" placeholder="Write a comment" required>
+            <button type="submit">Post Comment</button>
+            </form>
+            <ul class="list" id="comment-list"></ul>
         </div>
     <script src="src/index.js"></script>
 </body>
