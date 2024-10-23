@@ -1,7 +1,6 @@
-/* General Body Styling */
 body {
     font-family: 'Arial', sans-serif;
-    background-image: url('/assets/images/background.jpeg');
+    background-image: url('/assets/images/cover.jpg');
     background-position: cover;
     background-size: cover;
     background-repeat: no-repeat;
@@ -24,7 +23,7 @@ body {
     align-items: center;
 }
 .navbar img {
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 /* Coffee Menu Header */
@@ -32,7 +31,6 @@ h1 {
     font-size: 2.5rem;
     margin: 10px;
     color: white;
-    border-bottom: 1px solid white;
     font-style: italic;
     font-weight: lighter;
 }
@@ -40,7 +38,6 @@ h1 {
 /* Coffee Menu Table */
 table {
     width: 50%;
-    background-color: rgba(73, 34, 1, 0.8);
 }
 
 thead{
@@ -66,19 +63,17 @@ table img {
 }
 
 .coffee-img:hover {
-    transform: scale(1.2);
+    transform: scale(1.7);
     cursor: pointer;
 }
 
 /* Checkout Section */
 .checkout {
     position: absolute;
-    top: 130px;
+    top: 50px;
     right: 30px;
     width: 300px;
     overflow: hidden;
-    background-color: rgba(73, 34, 1, 0.8); /* 80% opaque */
-
     border: 1px solid #dee2e6;
     border-radius: 8px;
     padding: 10px;
@@ -109,25 +104,6 @@ table img {
     color: white;
     overflow-y: auto;
     max-height: 160px;
-}
-/* Webkit Scrollbar Styling (Chrome, Safari, Edge) */
-.checkout ul::-webkit-scrollbar {
-    width: 10px; /* Width of the scrollbar */
-}
-
-.checkout ul::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1); /* Track background */
-    border-radius: 5px; /* Rounded track corners */
-}
-
-.checkout ul::-webkit-scrollbar-thumb {
-    background-color: #f4a261; /* Scrollbar thumb color */
-    border-radius: 5px; /* Rounded scrollbar thumb */
-    border: 2px solid rgba(73, 34, 1, 0.8); /* Add a border around the thumb */
-}
-
-.checkout ul::-webkit-scrollbar-thumb:hover {
-    background-color: #e76f51; /* Darker color on hover */
 }
 
 .checkout li {
@@ -175,7 +151,7 @@ table img {
 }
 
 #order:hover {
-    background-color: #492201;
+    background-color: #178920;
     color: white;
     border: 1px solid white;
 }
@@ -191,7 +167,7 @@ button.btn-warning {
 }
 
 button.btn-warning:hover {
-    background-color: #492201;
+    background-color: #6e0a08;
     color: white;
     border: 1px solid white;
 }
